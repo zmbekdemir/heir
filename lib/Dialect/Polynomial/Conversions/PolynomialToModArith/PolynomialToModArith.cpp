@@ -1281,8 +1281,6 @@ struct ConvertEvaltoHorner : public OpConversionPattern<EvalOp> {
     if (!attr) return failure();
 
     const IntPolynomial &poly = attr.getValue().getPolynomial();
-    poly.print(llvm::outs());
-    llvm::outs() << "\n";
 
     auto x = op.getOperand();
     auto terms = poly.getTerms();
